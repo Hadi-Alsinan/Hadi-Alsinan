@@ -7,7 +7,7 @@ A software enginering student by day and a flutter devloper by night
 I've been learning how to code since 2020, started with python to get the fundamentals, and then moved to java to get the best practices as a software engineer and to get a better understanding of OOP. Started to learn flutter at the end of 2021 and got an internship at a startup local company
 
 * 🌍  I'm based in Qatif
-* ✉️  You can contact me at [dev.hadialsinan.com](mailto:dev.hadialsinan.com)
+* ✉️  You can contact me at [dev.hadialsinan@gmail.com](mailto:dev.hadialsinan@gmail.com)
 * 🧠  I'm learning Web devlopment
 * 🤝  I'm open to collaborating on anything the peaks my intreast even if I don't know the languge I am willing to put in the effort and learn as we go!
 
