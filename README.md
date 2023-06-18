@@ -1,5 +1,5 @@
 # 💫 About Me:
-🔭 I’m currently working on my own start up<br>👯 I’m looking to collaborate on anything and everything that peaks my interest<br>🤝 I’m looking for help with building my own start up<br>🌱 I’m currently learning Mobile development and ML<br>💬 Ask me about anything, I'd love to help if I can<br>
+🔭 I’m currently working on my own start-up <br>👯 I’m looking to collaborate on anything and everything that peaks my interest<br>🤝 I’m looking for help with building my own start up<br>🌱 I’m currently learning Mobile development and ML<br>💬 Ask me about anything, I'd love to help if I can<br>
 
 
 ## 🌐 Socials:
@@ -11,7 +11,6 @@
 <div style="display: flex; justify-content: space-between; align-items: center;">
     <img src="https://github-readme-stats.vercel.app/api?username=Hadi-Alsinan&theme=tokyonight&hide_border=false&include_all_commits=true&count_private=true" alt="GitHub Stats" />
     <img src="https://github-readme-streak-stats.herokuapp.com/?user=Hadi-Alsinan&theme=tokyonight&hide_border=false" alt="GitHub Streak" />
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hadi-Alsinan&theme=tokyonight&hide_border=false&include_all_commits=true&count_private=true&layout=compact" alt="Top Languages" />
 </div>
 
 ## 🏆 GitHub Trophies
