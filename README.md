@@ -1,5 +1,5 @@
 # 💫 About Me:
-🔭 I’m currently working on my own start-up <br>👯 I’m looking to collaborate on anything and everything that peaks my interest<br>🤝 I’m looking for help with building my own start up<br>🌱 I’m currently learning Mobile development and ML<br>💬 Ask me about anything, I'd love to help if I can<br>
+🔭 I’m currently working on my start-up <br>👯 I’m looking to collaborate on anything and everything that peaks my interest<br>💬 Ask me about anything, I'd love to help if I can<br>
 
 
 ## 🌐 Socials:
