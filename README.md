@@ -54,16 +54,6 @@
 
 ---
 
-## ✨ Featured Projects
-
-- 🚀 <b>TaqaPay</b> — Building the future of fintech!
-- 🌱 <b>TerraLoop</b> — Sustainability and innovation for a greener future.
-- 🌉 <b>Jusoor</b> — Bridging gaps and connecting communities.
-- 👋 <b>Hayyak</b> — Enhancing user experiences with thoughtful technology.
-
-
----
-
 ## 📊 GitHub Stats
 
 <p align="center">
