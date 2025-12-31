@@ -2,7 +2,7 @@
 
 <h1 align="center">Hi there, I'm Hadi Alsinan 👋</h1>
 <p align="center">
-  <b>Associate Developer at IBM | Co-Founder of AjelPay</b>
+  <b>Application  Developer at IBM | Co-Founder of AjelPay</b>
 </p>
 <p align="center">
   <em>Fueling growth with code, creativity, and community.</em>
@@ -12,7 +12,7 @@
 
 ## 💫 About Me
 
-- 👨‍💻 Associate Developer at <b>IBM</b>
+- 👨‍💻 Application  Developer at <b>IBM</b>
 - 🚀 Founder of <b>AjelPay</b> — building the future of fintech!
 - 💡 Passionate about fintech, mobile apps, and scalable solutions
 - 🤝 Always open to collaborations and exciting tech challenges
