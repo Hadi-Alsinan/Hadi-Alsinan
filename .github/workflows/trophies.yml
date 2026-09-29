@@ -1,0 +1,55 @@
+# Save as .github/workflows/trophies.yml in Hadi-Alsinan/Hadi-Alsinan
+# Uses the METRICS_TOKEN secret (classic PAT with read:user + public_repo scopes).
+
+name: Profile trophies
+
+on:
+  schedule:
+    - cron: "47 3 * * *"   # daily, 03:47 UTC (after the metrics workflow)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  trophies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout profile repo
+        uses: actions/checkout@v4
+
+      - name: Checkout trophy generator
+        uses: actions/checkout@v4
+        with:
+          repository: ryo-ma/github-profile-trophy
+          path: trophy-src
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Generate trophies
+        working-directory: trophy-src
+        env:
+          GITHUB_TOKEN1: ${{ secrets.METRICS_TOKEN }}
+          GITHUB_TOKEN2: ${{ secrets.METRICS_TOKEN }}
+          GITHUB_API: https://api.github.com/graphql
+        run: |
+          deno run --allow-net --allow-env --allow-read --allow-write ./render_svg.ts Hadi-Alsinan ../trophy-out tokyonight
+          ls -la ../trophy-out
+
+      - name: Save SVG into the profile repo
+        run: |
+          SVG=$(find trophy-out -name '*.svg' | head -n 1)
+          test -n "$SVG"
+          cp "$SVG" github-trophies.svg
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add github-trophies.svg
+          git diff --cached --quiet || git commit -m "chore: update trophies"
+          git pull --rebase
+          git push
