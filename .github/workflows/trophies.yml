@@ -49,9 +49,18 @@ jobs:
 
       - name: Save SVG into the profile repo
         run: |
-          SVG=$(find trophy-out -name '*.svg' | head -n 1)
-          test -n "$SVG"
-          cp "$SVG" github-trophies.svg
+          echo "--- what the generator produced ---"
+          ls -laR trophy-out || true
+          # The generator may write a file named trophy-out, or a .svg inside a folder.
+          if [ -f trophy-out ]; then
+            cp trophy-out github-trophies.svg
+          else
+            SVG=$(find trophy-out -type f | head -n 1 || true)
+            test -n "$SVG" || { echo "No output file found"; exit 1; }
+            cp "$SVG" github-trophies.svg
+          fi
+          grep -q "<svg" github-trophies.svg || { echo "Output is not an SVG:"; head -c 500 github-trophies.svg; exit 1; }
+          ls -la github-trophies.svg
 
       - name: Commit
         run: |
