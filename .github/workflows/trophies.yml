@@ -1,7 +1,8 @@
 # Save as .github/workflows/trophies.yml in Hadi-Alsinan/Hadi-Alsinan
 #
-# Needs a repository secret TROPHY_TOKEN: a classic PAT with ONLY the read:user scope
-# (read-only, so the third-party fork below can't change anything on your account).
+# Uses the same METRICS_TOKEN secret as the metrics workflow. Keep that token to
+# read:user at most (no public_repo / repo), so the third-party fork below can't
+# change anything on your account.
 #
 # Why a fork? The upstream render_svg.ts on ryo-ma's master fails for every user
 # (ryo-ma/github-profile-trophy PR #458 is the open fix). Once that PR is merged,
@@ -39,8 +40,8 @@ jobs:
       - name: Generate trophies
         working-directory: trophy-src
         env:
-          GITHUB_TOKEN1: ${{ secrets.TROPHY_TOKEN }}
-          GITHUB_TOKEN2: ${{ secrets.TROPHY_TOKEN }}
+          GITHUB_TOKEN1: ${{ secrets.METRICS_TOKEN }}
+          GITHUB_TOKEN2: ${{ secrets.METRICS_TOKEN }}
           GITHUB_API: https://api.github.com/graphql
         run: |
           deno run --allow-net --allow-env --allow-read --allow-write ./render_svg.ts Hadi-Alsinan ../trophy-out tokyonight
