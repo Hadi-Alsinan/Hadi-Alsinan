@@ -1,11 +1,17 @@
 # Save as .github/workflows/trophies.yml in Hadi-Alsinan/Hadi-Alsinan
-# Uses the METRICS_TOKEN secret (classic PAT with read:user + public_repo scopes).
+#
+# Needs a repository secret TROPHY_TOKEN: a classic PAT with ONLY the read:user scope
+# (read-only, so the third-party fork below can't change anything on your account).
+#
+# Why a fork? The upstream render_svg.ts on ryo-ma's master fails for every user
+# (ryo-ma/github-profile-trophy PR #458 is the open fix). Once that PR is merged,
+# change `repository:` back to ryo-ma/github-profile-trophy and drop `ref:`.
 
 name: Profile trophies
 
 on:
   schedule:
-    - cron: "47 3 * * *"   # daily, 03:47 UTC (after the metrics workflow)
+    - cron: "47 3 * * *"   # daily, 03:47 UTC
   workflow_dispatch:
 
 permissions:
@@ -13,15 +19,16 @@ permissions:
 
 jobs:
   trophies:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout profile repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
-      - name: Checkout trophy generator
-        uses: actions/checkout@v4
+      - name: Checkout trophy generator (with the PR #458 fixes)
+        uses: actions/checkout@v5
         with:
-          repository: ryo-ma/github-profile-trophy
+          repository: satishjhanwer/github-profile-trophy
+          ref: fix/svg-generation-bugs
           path: trophy-src
 
       - name: Set up Deno
@@ -32,8 +39,8 @@ jobs:
       - name: Generate trophies
         working-directory: trophy-src
         env:
-          GITHUB_TOKEN1: ${{ secrets.METRICS_TOKEN }}
-          GITHUB_TOKEN2: ${{ secrets.METRICS_TOKEN }}
+          GITHUB_TOKEN1: ${{ secrets.TROPHY_TOKEN }}
+          GITHUB_TOKEN2: ${{ secrets.TROPHY_TOKEN }}
           GITHUB_API: https://api.github.com/graphql
         run: |
           deno run --allow-net --allow-env --allow-read --allow-write ./render_svg.ts Hadi-Alsinan ../trophy-out tokyonight
