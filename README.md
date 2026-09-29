@@ -91,10 +91,10 @@
   <img src="https://streak-stats.demolab.com/?user=Hadi-Alsinan&theme=tokyonight&hide_border=false" alt="GitHub streak" width="60%"/>
 </p>
 
-## 🏆 Achievements
+## 🏆 Trophies
 
 <p align="center">
-  <img src="./github-achievements.svg" alt="GitHub achievements" width="100%"/>
+  <img src="./github-trophies.svg" alt="GitHub trophies" width="100%"/>
 </p>
 
-<sub>Stats and achievements are generated daily by a GitHub Action in this repo.</sub>
+<sub>Stats and trophies are generated daily by a GitHub Action in this repo.</sub>
